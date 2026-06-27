@@ -1,0 +1,104 @@
+<style>
+    .news-container { display: flex; flex-direction: column; gap: 15px; padding-bottom: 10px; }
+    
+    .news-card { 
+        display: flex; 
+        flex-direction: row; 
+        background: rgba(255, 255, 255, 0.05); 
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        border-radius: 10px; 
+        padding: 15px; 
+        gap: 15px; 
+        /* 🔥 CLAVE PARA TEXTOS LARGOS: Alinea la imagen arriba, no al centro */
+        align-items: flex-start; 
+        transition: border-color 0.2s ease; 
+    }
+    .news-card:hover { border-color: rgba(16, 185, 129, 0.4); }
+
+    .news-left { flex: 1; display: flex; flex-direction: column; }
+    .news-date { font-size: 11px; color: #fbbf24; font-weight: 600; margin-bottom: 5px; text-transform: uppercase; }
+    .news-title { font-size: 14px; color: #ffffff; font-weight: bold; margin-bottom: 10px; }
+    .news-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
+
+    /* Contenedor de la Imagen Única (Miniatura) */
+    .news-right { 
+        position: relative; 
+        width: 140px; /* Un poco más ancha para que destaque */
+        height: 100px; 
+        flex-shrink: 0; 
+        border-radius: 6px; 
+        overflow: hidden; 
+        border: 1px solid rgba(255,255,255,0.1); 
+        cursor: zoom-in; 
+    }
+    .news-right:hover .media-content { transform: scale(1.05); }
+    
+    /* La imagen o video principal */
+    .media-content { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; display: block; }
+    
+    /* Oculta el resto de elementos (imágenes o videos) de la galería */
+    .news-right .media-content ~ .media-content { display: none; } 
+
+    .gallery-indicator { 
+        position: absolute; bottom: 5px; right: 5px; 
+        background: rgba(10, 15, 30, 0.85); backdrop-filter: blur(5px); 
+        color: #ffffff; font-size: 10px; font-weight: bold; padding: 4px 8px; 
+        border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); 
+        pointer-events: none; box-shadow: 0 2px 5px rgba(0,0,0,0.5); 
+    }
+
+    .btn-download {
+        display: inline-block; margin-top: 10px; padding: 6px 15px;
+        background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981;
+        color: #34d399; border-radius: 6px; text-decoration: none;
+        font-size: 11px; font-weight: 800; transition: all 0.2s;
+        text-align: center; letter-spacing: 0.5px; align-self: flex-start;
+    }
+    .btn-download:hover { background: #10b981; color: #fff; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3); }
+</style>
+
+<div class="news-container">
+
+    <!-- TARJETA: ACTUALIZACIÓN ASISTENTE -->
+    <div class="news-card">
+        
+        <!-- TEXTO Y ENLACES (Izquierda) -->
+        <div class="news-left">
+            <div class="news-date">📅 27/06/2026</div>
+            <div class="news-title">🚀 Nuevo parche: Asistente de Llamadas</div>
+            <div class="news-desc">
+                <p style="margin: 0 0 8px 0;">
+                    Si ya tienes el asistente instalado ESTE SOLO LA ACTUALIZA, si no la tienes la INSTALA. <b>No se perderán datos.</b><br>
+                    <i>Cualquier Bug Notificarlo.</i>
+                </p>
+                
+                <div style="color: #ef4444; font-weight: 800; margin-bottom: 4px;">🛠️ BUGS ARREGLADOS:</div>
+                <ul style="margin: 0; padding-left: 16px;">
+                    <li>Problema de visibilidad de datos del cliente solucionado.</li>
+                    <li>El botón <b>Detener</b> ya tiene efecto y reinicia el contador correctamente.</li>
+                </ul>
+
+                <a href="https://www.dropbox.com/scl/fi/7m1zw76qyme8gh0bdiqve/InstaladorAsistente.exe?rlkey=tyoge7galufuhae5saauj95bl&st=iiqj9fjo&dl=1" class="btn-download" target="_blank">
+                    ⬇️ DESCARGAR ASISTENTE DE LLAMADA
+                </a>
+            </div>
+        </div>
+
+        <!-- GALERÍA MULTIMEDIA (Derecha) -->
+        <div class="news-right">
+            <!-- 1. VIDEO (Actúa como miniatura y es el primer elemento de la galería) -->
+            <video class="media-content" autoplay loop muted playsinline>
+                <source src="https://i.imgur.com/Z15Eali.mp4" type="video/mp4">
+            </video>
+            
+            <!-- 2. IMÁGENES OCULTAS (Se mostrarán en el visor al hacer clic en siguiente) -->
+            <img class="media-content" src="https://i.imgur.com/PAyVNtn.png" alt="Instalador 1">
+            <img class="media-content" src="https://i.imgur.com/otquxQf.png" alt="Instalador 2">
+
+            <!-- Indicador actualizado al total de elementos -->
+            <div class="gallery-indicator">🎞️ + 📸 3 Items</div>
+        </div>
+
+    </div>
+
+</div>
