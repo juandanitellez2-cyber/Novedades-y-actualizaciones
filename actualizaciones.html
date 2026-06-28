@@ -86,19 +86,17 @@
 
         <!-- GALERÍA MULTIMEDIA (Derecha) -->
         <div class="news-right">
-            <!-- 1. VIDEO (Actúa como miniatura y es el primer elemento de la galería) -->
-            <video class="media-content" autoplay loop muted playsinline>
+            <!-- 1. VIDEO (Corregido sin autoplay para evitar lentitud) -->
+            <video class="media-content" loop muted playsinline preload="metadata">
                 <source src="https://i.imgur.com/Z15Eali.mp4" type="video/mp4">
             </video>
             
-            <!-- 2. IMÁGENES OCULTAS (Se mostrarán en el visor al hacer clic en siguiente) -->
+            <!-- 2. IMÁGENES OCULTAS -->
             <img class="media-content" src="https://i.imgur.com/PAyVNtn.png" alt="Instalador 1">
             <img class="media-content" src="https://i.imgur.com/otquxQf.png" alt="Instalador 2">
 
-            <!-- Indicador actualizado al total de elementos -->
             <div class="gallery-indicator">🎞️ + 📸 3 Items</div>
         </div>
-
     </div>
 
     <!-- TARJETA: CONTACTOS Y SOPORTE -->
@@ -121,19 +119,18 @@
 
         <!-- MULTIMEDIA (Derecha) -->
         <div class="news-right" style="background: #ffffff;">
-            <!-- 1. Logo de WhatsApp (miniatura principal visible) -->
+            <!-- 1. Logo de WhatsApp -->
             <img class="media-content" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="object-fit: contain; padding: 15px; box-sizing: border-box;">
             
-            <!-- 2. Logo de Telegram (oculto para la galería) -->
+            <!-- 2. Logo de Telegram -->
             <img class="media-content" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="object-fit: contain; padding: 15px; box-sizing: border-box;">
 
-            <!-- Indicador -->
             <div class="gallery-indicator" style="background: rgba(0,0,0,0.7);">📸 2 Logos</div>
         </div>
     </div>
+
     <!-- TARJETA: ACTIVACIÓN DE AUTO DIALER -->
     <div class="news-card">
-        
         <!-- TEXTO (Izquierda) -->
         <div class="news-left">
             <div class="news-date">📅 24/06/2026</div>
@@ -152,15 +149,16 @@
 
         <!-- MULTIMEDIA (Derecha) -->
         <div class="news-right">
-            <!-- 1. VIDEO PRINCIPAL (Sin autoplay para no hacer lenta la PC) -->
+            <!-- 1. VIDEO PRINCIPAL -->
             <video class="media-content" loop muted playsinline preload="metadata">
                 <source src="https://i.imgur.com/1onNVyA.mp4" type="video/mp4">
             </video>
-           <img class="media-content" src="https://i.imgur.com/E0PmdL2.png" alt="Foto Dialer">
+            
+            <!-- 2. IMAGEN SECUNDARIA -->
+            <img class="media-content" src="https://i.imgur.com/E0PmdL2.png" alt="Foto Dialer">
 
-            <!-- Indicador -->
-            <div class="gallery-indicator">🎞️ + 📸 1 Items</div>
+            <!-- Indicador Corregido a 2 items -->
+            <div class="gallery-indicator">🎞️ + 📸 2 Items</div>
         </div>
-        
     </div>
 </div>
